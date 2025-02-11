@@ -11,3 +11,7 @@
 
 1- Creamos las carpetas para el MVC (Controllers, Models, Routes)
 2- Instalamos los paquetes base: npm i nodemon express cors mongoose
+
+* Documentación de MONGO
+- MongoDB: https://www.mongodb.com/docs/manual/reference/method/
+- Mongoose (Librería que interactúa entre node js y MongoDB): https://mongoosejs.com/docs/guide.html#methods 
