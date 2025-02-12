@@ -1,21 +1,19 @@
 //librerias base
-const express = require('express')
+const express = require("express");
 const app = express();
 const cors = require("cors");
 //middleware de la app
 app.use(cors());
 app.use(express.json());
 //llamamos la librería de conexión
-const conexion = require('./models/bd_conexion');
-conexion()
+const conexion = require("./models/bd_conexion");
+conexion();
 //rutas globales de la app
-const productoRta = require("./routes/productos")
-
-
+const productoRta = require("./routes/productos");
 
 //usamos las rutas
-app.use("/api",productoRta)
+app.use("/api", productoRta);
 
-app.listen(4000,()=>{
-    console.log(`listen ${4000}`);
+app.listen(4000, () => {
+  console.log(`listen ${4000}`);
 });
