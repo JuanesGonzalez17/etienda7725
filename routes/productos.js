@@ -9,5 +9,8 @@ const productoCtr = require("../controllers/productos");
 
 router.get("/producto/listartodos", productoCtr.listartodos);
 router.post("/producto/nuevo", productoCtr.nuevo);
+router.get("/producto/buscarporid/:id", productoCtr.buscarporid);
+router.delete("/producto/borrarporid/:id", productoCtr.borrarporid);
+router.put("/producto/actualizarporid/:id", productoCtr.actualizarporid);
 //....
 module.exports = router;
