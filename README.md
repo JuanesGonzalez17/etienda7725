@@ -10,7 +10,7 @@
 - Internamente usaremos MVC (Tenga en cuenta que las vistas se reemplazan por rutas)
 
 1- Creamos las carpetas para el MVC (Controllers, Models, Routes)
-2- Instalamos los paquetes base: npm i nodemon express cors mongoose
+2- Instalamos los paquetes base: npm i nodemon express cors mongoose bcryptjs
 
 * Documentación de MONGO
 - MongoDB: https://www.mongodb.com/docs/manual/reference/method/

@@ -8,9 +8,9 @@ const usuarioCtr = require("../controllers/usuarios");
 //rutas que entregará el modulo producto
 
 router.get("/usuario/listartodos", usuarioCtr.listartodos);
-// router.post("/producto/nuevo", productoCtr.nuevo);
-// router.get("/producto/buscarporid/:id", productoCtr.buscarporid);
-// router.delete("/producto/borrarporid/:id", productoCtr.borrarporid);
-// router.put("/producto/actualizarporid/:id", productoCtr.actualizarporid);
+router.post("/usuario/nuevo", usuarioCtr.registro);
+// router.get("/usuario/buscarporid/:id", usuarioCtr.buscarporid);
+// router.delete("/usuario/borrarporid/:id", usuarioCtr.borrarporid);
+// router.put("/usuario/actualizarporid/:id", usuarioCtr.actualizarporid);
 //....
 module.exports = router;
