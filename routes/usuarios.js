@@ -9,7 +9,7 @@ const usuarioCtr = require("../controllers/usuarios");
 
 router.get("/usuario/listartodos", usuarioCtr.listartodos);
 router.post("/usuario/nuevo", usuarioCtr.registro);
-// router.get("/usuario/buscarporid/:id", usuarioCtr.buscarporid);
+router.post("/usuario/login", usuarioCtr.login);
 // router.delete("/usuario/borrarporid/:id", usuarioCtr.borrarporid);
 // router.put("/usuario/actualizarporid/:id", usuarioCtr.actualizarporid);
 //....

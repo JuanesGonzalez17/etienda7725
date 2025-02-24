@@ -1,6 +1,7 @@
 //instanciamos la capa modelo correspondiente
 let Usuario = require("../models/usuarios");
 let bcryptjs = require("bcryptjs");
+let jwt = require("jsonwebtoken");
 //métodos de la librería - métodos de la clase
 const listartodos = async (req, res) => {
   try {
@@ -60,19 +61,33 @@ const login = async (req, res) => {
   if (!usuarioexiste) {
     return res.send({
       estado: false,
-      mensaje: "no existe el usuario",
+      mensaje: "No existe el usuario en la base de datos.",
     });
   }
 
-  if (bcryptjs.compareSync(req.body.clave, Usuarios.passwordHash)) {
+  if (bcryptjs.compareSync(req.body.clave, usuarioexiste.passwordHash)) {
+    //Autenticación de 2 factores con generación de token
+    const token = jwt.sign(
+      {
+        //datos a codificar en el token
+        userId: usuarioexiste.id,
+        isAdmin: usuarioexiste.esAdmin,
+      },
+      //salt de la codificada o hashing o encriptado
+      "seCreTo",
+      {
+        //vida util del token
+        expiresIn: "4h",
+      }
+    );
     return res.send({
       estado: true,
-      mensaje: "ok",
+      mensaje: "Ingreso exitoso al sistema.",
     });
   } else {
     return res.send({
       estado: false,
-      mensaje: "no",
+      mensaje: "Credenciales erróneas, intente de nuevo.",
     });
   }
 };
